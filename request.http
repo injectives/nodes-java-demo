@@ -1,1 +1,55 @@
 GET http://localhost:8080/movies
+
+### Plain JSON
+POST http://localhost:7474/db/neo4j/query/v2
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic neo4j secret12345! # Bearer also supported
+
+{
+  "statement": "RETURN 1"
+}
+
+
+
+
+
+### Does someone smell smoke?
+POST http://localhost:7474/db/neo4j/query/v2
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic neo4j secret12345!
+
+{
+  "statement": "RETURN 3/0"
+}
+
+
+### Typed JSON
+POST http://localhost:7474/db/neo4j/query/v2
+Content-Type: application/vnd.neo4j.query
+Accept: application/vnd.neo4j.query
+Authorization: Basic neo4j secret12345!
+
+{
+  "statement": "RETURN 1"
+}
+
+
+
+
+
+
+### Parameters
+POST http://localhost:7474/db/neo4j/query/v2
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic neo4j secret12345!
+
+{
+  "statement": "RETURN $paramA, $paramB",
+  "parameters": {
+    "paramA": "Nodes 2025",
+    "paramB": "Java Rocks!"
+  }
+}
