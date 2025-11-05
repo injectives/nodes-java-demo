@@ -19,7 +19,7 @@
 
 	<properties>
 		<java.version>21</java.version>
-        <neo4j-java-driver.version>6.0-SNAPSHOT</neo4j-java-driver.version>
+        <neo4j-java-driver.version>6.0.2</neo4j-java-driver.version>
 	</properties>
 
 	<dependencies>
